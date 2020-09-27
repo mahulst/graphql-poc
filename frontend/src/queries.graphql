@@ -1,0 +1,14 @@
+query GetUserListName {
+    users {
+        name
+    }
+}
+
+query PostsForUser($id: String!) {
+    user(id: $id) {
+        name
+        posts {
+            name
+        }
+    }
+}

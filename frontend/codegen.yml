@@ -1,0 +1,14 @@
+overwrite: true
+schema:
+  - "./node_modules/@mahulst/posts/src/schema.graphql"
+  - "./node_modules/@mahulst/users/src/schema.graphql"
+documents: "src/**/*.graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

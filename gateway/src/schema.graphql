@@ -1,0 +1,14 @@
+type Post @key(fields: "_id"){
+    _id : ID
+    name : String!
+    description : String
+}
+
+extend type User @key(fields: "_id") {
+    _id : ID @external
+    posts: [Post]
+}
+
+extend type Query {
+    posts: [Post!]!
+}
